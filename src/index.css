@@ -208,18 +208,16 @@ h2{
     width:calc(20% - 40px);
   }
 
-  #filterBar, #currentDay, #forcast{
+  #filterBar, #forcast{
     max-width:1200px;
     margin:0 auto;
     text-align:left;
   }
 
-  #filterBar, #forcast{
-    max-width:1200px;
-  }
-
   #currentDay{
     max-width:1160px;
+    margin:15px auto;
+    text-align:left;
   }
 
   #forcast h2, #forcast .days{
