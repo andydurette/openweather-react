@@ -1,6 +1,7 @@
 # React OpenWeather
 
 This is a react weather application built using openweather API data.
+Live Link: https://openweather-react.netlify.com
 
 ![markdown-image](public/images/markdown-image.png)
 
