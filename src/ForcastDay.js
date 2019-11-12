@@ -8,9 +8,9 @@ export default class ForcastDay extends React.Component {
     return (
       <div>
         <p>{ GetDate(this.props.keyNumber) }</p>
-        <img src={`https://openweathermap.org/img/w/${this.props.icon}.png`} alt={this.props.altText} width="50" height="50" />
-        <p><span>Temp:</span> {this.props.temp}&nbsp;°C</p>
-        <p><span>Humidity:</span> {this.props.humidity}&nbsp;%"</p>
+        <img src={`/images/weatherIcons/${this.props.icon}.svg`} alt={this.props.altText} width="70" height="70" />
+        <p><span>Temperature:</span> {this.props.temp}&nbsp;°C</p>
+        <p><span>Humidity:</span> {this.props.humidity}&nbsp;%</p>
       </div>
   )
 }

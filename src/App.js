@@ -14,6 +14,7 @@ export default class App extends Component {
       // Putting the API Key in state itself is likely bad practice but I'm not working with a backend to hide it so it's just a convient place to store it.
       apiKey: "428bbab3989b31eb5f6dd40e0559cbeb",
       cityName:'Toronto',
+      approvedCityName:'Toronto',
       cityId: '',
       weather: {},
       search: "",
@@ -47,7 +48,7 @@ export default class App extends Component {
       // Call with the cityId data to get it's weather
       const response2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityId}&APPID=${this.state.apiKey}&units=metric`);
       const json2 = await response2.json();
-      this.setState({ weather: json2, searchErrorValue: "" });
+      this.setState({ weather: json2, searchErrorValue: "", approvedCityName: this.state.cityName });
     }else{
       this.setState({searchErrorValue: `*City ${this.state.cityName} not found in database.`})
     }
@@ -82,7 +83,7 @@ export default class App extends Component {
           <React.Fragment>
           
             <header>
-              <h1>Weather Dashboard</h1>
+              <h1><img src="/images/weatherIcons/marker.svg" width="35" height="35" alt=""/>{this.state.approvedCityName}'s Weekly Weather Forecast</h1>
             </header>
 
             <SearchField
