@@ -1,6 +1,6 @@
 # React OpenWeather
 
-This is a react  weather application built using openweather API data.
+This is a react weather application built using openweather API data.
 
 ![markdown-image](public/images/markdown-image.png)
 

@@ -85,7 +85,7 @@ export default class App extends Component {
             <header>
               <h1><img src="/images/weatherIcons/marker.svg" width="35" height="35" alt=""/>{this.state.approvedCityName}'s Weekly Weather Forecast</h1>
             </header>
-
+            <div id="centerBox">
             <SearchField
               onChange={this.updateSearch.bind(this)}
               value={this.state.search} 
@@ -121,8 +121,10 @@ export default class App extends Component {
                 }
                 </div>
             </section>
+            </div>
         </React.Fragment>
           )}
+          
       </React.Fragment>
       </ErrorBoundry>
     );
