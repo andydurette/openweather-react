@@ -9,15 +9,16 @@ export default class SearchField extends React.Component {
         <div id="search">
           <input 
             type="text" 
-            placeholder="Search for a different cities Weather..."
+            placeholder="Search for a different different cities Weather..."
             value={this.props.value} 
             onChange={this.props.onChange}
           />
           <button onClick={this.props.onClick}><img src="./images/search.png" alt="search"/></button>
         </div>
+        {/*}
          <div id="searchError">
            <p>{this.props.searchErrorValue}</p>
-         </div>
+         </div> */}
       </section>
     )
   }

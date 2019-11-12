@@ -19,7 +19,8 @@ export default class App extends Component {
       weather: {},
       search: "",
       isFetching: true,
-      searchErrorValue: ""
+      searchErrorValue: "",
+      erroLogged: false
     }
   }
 
@@ -50,7 +51,8 @@ export default class App extends Component {
       const json2 = await response2.json();
       this.setState({ weather: json2, searchErrorValue: "", approvedCityName: this.state.cityName });
     }else{
-      this.setState({searchErrorValue: `*City ${this.state.cityName} not found in database.`})
+      this.setState({searchErrorValue: `* ${this.state.cityName} not found in database of cities.`, errorLogged: true})
+      setTimeout(() => {  this.setState({ errorLogged: false}) }, 3000);
     }
   }
 
@@ -63,12 +65,14 @@ export default class App extends Component {
   // SearchUpdate function
   searchUpdate = () => { 
     if (this.state.search === '') {
-      this.setState({searchErrorValue: "*Requires a city name."});
+      this.setState({searchErrorValue: "*Requires a city name to be inputted.", errorLogged: true});
+      setTimeout(() => {  this.setState({ errorLogged: false}) }, 3000);
     }else{
       // Run a callback to update the Weather state once the setState for the cityName state is given from the searchState tiggered by the button in SearchField.js
       this.setState({cityName: this.state.search, searchErrorValue: ""}, this.weatherUpdate);
     }
   }
+
 
   render() {
     return (
@@ -81,10 +85,9 @@ export default class App extends Component {
         </div>
         : (
           <React.Fragment>
-          
-            <header>
-              <h1><img src="/images/weatherIcons/marker.svg" width="35" height="35" alt=""/>{this.state.approvedCityName}'s Weekly Weather Forecast</h1>
-            </header>
+            <div id="errorBox" className={(this.state.errorLogged) ?  "open" : "" }>
+            <img src="/images/weatherIcons/marker.svg" width="30" height="30" alt=""/><p>{this.state.searchErrorValue}</p>
+            </div>
             <div id="centerBox">
             <SearchField
               onChange={this.updateSearch.bind(this)}
@@ -100,6 +103,7 @@ export default class App extends Component {
               temp={this.state.weather.list[0].main.temp}
               humidity={this.state.weather.list[0].main.humidity}
               windSpeed={this.state.weather.list[0].wind.speed}
+              approvedCityName={this.state.approvedCityName}
             />
 
             <section id="forcast">

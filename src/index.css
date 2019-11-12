@@ -5,7 +5,6 @@ html{
 html,body{
   height:100%;
   color:#fff;
-
 }
 
 body{
@@ -25,7 +24,9 @@ body{
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 70px);
-  padding:20px 0;
+  padding:30px 0;
+  box-sizing:border-box;
+  transition: height 2s;
 }
 
 header{
@@ -39,20 +40,61 @@ h1 {
   color:white;
   width: 100%;
   display:flex;
-  align-items:center;
-  justify-content: center;
-  padding: 10px 20px;
-  text-align: center;
+  padding: 10px 0;
   text-transform: capitalize;
   margin:0;
+  box-sizing: border-box;
 }
 
 h2{
   text-align:center;
 }
 
+
+
+sup{
+  text-transform: lowercase;
+  font-size:.7em;
+}
+
+.smallText{
+  text-transform: lowercase;
+  font-size:.7em;
+}
+
 #filterBar{
   padding:0 20px;
+}
+
+#errorBox{
+  background-color: #b61818;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25em;
+  text-align: center;
+  padding:5px 10px;
+  margin: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  width:100%;
+  box-sizing:border-box;
+  height: 40px;
+  margin-top:-40px;
+  overflow:hidden;
+  transition: margin-top 0.25s linear;
+}
+
+#errorBox.open {
+  padding:5px 10px;
+  margin-top:0;
+  visibility:visible;
+  transition: margin-top 0.25s linear;
+}
+
+#errorBox p{
+  margin:0;
 }
 
 #currentDay{
@@ -64,21 +106,20 @@ h2{
   box-sizing:border-box;
 }
 
-#currentDay div{
+#currentDay > div{
   display: flex;
   flex-direction:column;
   justify-content: center;
   width: 100%;
 }
 
-#currentDay div p{
+#currentDay > div p{
   margin: 0.25em;
 }
 
 #currentDay img{
   min-width:50%;
 }
-
 
 .blockHeading{
   width:70%;
@@ -191,11 +232,11 @@ h2{
     min-height: calc( 100% - 70px);
   }
 
-  #currentDay div:nth-of-type(1){
+  #currentDay > div:nth-of-type(1){
     width:40%;
   }
 
-  #currentDay div:nth-of-type(2){
+  #currentDay > div:nth-of-type(2){
     width:60%;
   }
 
@@ -231,7 +272,7 @@ h2{
     align-items: center;
   }
 
-  #currentDay div{
+  #currentDay > div{
     display:flex;
     justify-content: center;
     flex-direction:column;
