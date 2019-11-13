@@ -8,7 +8,7 @@ export default class SearchField extends React.Component {
         <h2>Search for a City:</h2>
         <div id="search">
           <input 
-            type="text" name="search"
+            type="text" name="City Search"
             placeholder="Search for a different different cities Weather..."
             value={this.props.value} 
             onChange={this.props.onChange}
