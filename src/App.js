@@ -20,7 +20,7 @@ export default class App extends Component {
       search: "",
       isFetching: true,
       searchErrorValue: "",
-      erroLogged: false
+      errorLogged: false
     }
   }
 
@@ -68,7 +68,7 @@ export default class App extends Component {
       this.setState({searchErrorValue: "*Requires a city name to be inputted.", errorLogged: true});
       setTimeout(() => {  this.setState({ errorLogged: false}) }, 3000);
     }else{
-      // Run a callback to update the Weather state once the setState for the cityName state is given from the searchState tiggered by the button in SearchField.js
+      // Run a callback to update the Weather state once the setState for the cityName state is given from the searchState triggered by the button in SearchField.js
       this.setState({cityName: this.state.search, searchErrorValue: ""}, this.weatherUpdate);
     }
   }
