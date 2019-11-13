@@ -84,7 +84,6 @@ sup{
   margin-top:-50px;
   overflow:hidden;
   transition: margin-top 0.25s linear;
-  display:none;
 }
 
 #errorBox.open {
@@ -92,7 +91,6 @@ sup{
   margin-top:0;
   visibility:visible;
   transition: margin-top 0.25s linear;
-  display:flex;
 }
 
 #errorBox p{
