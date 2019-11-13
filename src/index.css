@@ -244,6 +244,10 @@ sup{
     padding: 0 20px;
   }
 
+  #forcast h2{
+    text-transform: capitalize;
+  }
+
   #forcast .days{
     display:flex;
     justify-content: space-between;
