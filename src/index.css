@@ -41,7 +41,7 @@ header{
   background-color: rgba(19,32,40,.5);
 }
 
-h1 {
+.blockHeading h1 {
   color:white;
   width: 100%;
   display:flex;
@@ -222,7 +222,7 @@ sup{
 }
 
 @media only screen and (min-width: 768px) {
-  h1{
+  .blockHeading h1{
     justify-content: flex-start;
   }
 

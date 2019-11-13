@@ -9,12 +9,10 @@ function GetDate(days){
   let mm = someDate.getMonth() + 1;
   let y = someDate.getFullYear();
 
-  let mydate = new Date(mm + '-'+ dd + '-'+ y);
+  let mydate = new Date(y + '-' + mm + '-'+ dd);
 
   return mydate.toDateString();
 }
-
-
 
 export default GetDate;  
   

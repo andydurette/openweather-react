@@ -107,7 +107,7 @@ export default class App extends Component {
             />
 
             <section id="forcast">
-              <h2>5-Day Forecast:</h2>
+            <h2>{this.state.approvedCityName}'s 5-Day Forecast:</h2>
               <div className="days">
                 {
                   [0,1,2,3,4].map ((i) => {

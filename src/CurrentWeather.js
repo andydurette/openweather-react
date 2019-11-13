@@ -14,7 +14,7 @@ export default class CurrentWeather extends React.Component {
         <img src={`/images/weatherIcons/${this.props.icon}.svg`} alt={this.props.altText} />
         </div>
         <div className="blockHeading">
-            <h1>{this.props.approvedCityName}'s Weekly Weather Forecast</h1>
+            <h1>{this.props.approvedCityName}'s current weather</h1>
             <p><span>Temperature:</span> {this.props.temp} <sup>°C</sup></p>
             <p><span>Humidity:</span> {this.props.humidity} <sup>%</sup></p>
             <p><span>Wind Speed:</span> {this.mph(this.props.windSpeed)} <span className="smallText">KM / h</span></p>
