@@ -46,10 +46,16 @@ header{
   width: 100%;
   display:flex;
   justify-content: center;
+  text-align:center;
   padding: 10px 0;
   text-transform: capitalize;
   margin:0;
   box-sizing: border-box;
+}
+
+#forcast h2{
+  text-transform: capitalize;
+  text-align:center;
 }
 
 sup{
@@ -245,7 +251,7 @@ sup{
   }
 
   #forcast h2{
-    text-transform: capitalize;
+    text-align:left;
   }
 
   #forcast .days{
