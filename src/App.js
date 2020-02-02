@@ -67,9 +67,7 @@ export default class App extends Component {
     e.preventDefault();
     
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-      if (e.keyCode === 13) {
-        e.target.querySelector("#search input").blur();
-      }
+      e.target.querySelector("#search input").blur();
     }
 
     if (this.state.search === '') {
