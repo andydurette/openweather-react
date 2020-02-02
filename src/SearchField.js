@@ -3,11 +3,12 @@ import React from 'react';
 export default class SearchField extends React.Component {
 
   shouldBlur = (e) => {
-    console.log("Hi");
-    if (e.keyCode === 40) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    if (e.keyCode === 13) {
       e.target.blur();
       // or set the state as you wish
     }
+  }
   }
   
   
