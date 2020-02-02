@@ -91,8 +91,8 @@ export default class App extends Component {
             </div>
             <div id="centerBox">
             <SearchField
-              onChange={this.updateSearch.bind(this)}
               value={this.state.search} 
+              onChange={this.updateSearch.bind(this)}
               onSubmit={ (e) => this.searchUpdate(e) }
               searchErrorValue = {this.state.searchErrorValue}
             />
