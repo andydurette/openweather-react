@@ -63,7 +63,8 @@ export default class App extends Component {
   }
 
   // SearchUpdate function
-  searchUpdate = () => { 
+  searchUpdate = (e) => { 
+    e.preventDefault();
     if (this.state.search === '') {
       this.setState({searchErrorValue: "*Requires a city name to be inputted.", errorLogged: true});
       setTimeout(() => {  this.setState({ errorLogged: false}) }, 3000);
@@ -92,7 +93,7 @@ export default class App extends Component {
             <SearchField
               onChange={this.updateSearch.bind(this)}
               value={this.state.search} 
-              onClick={ () => this.searchUpdate() }
+              onSubmit={ (e) => this.searchUpdate(e) }
               searchErrorValue = {this.state.searchErrorValue}
             />
             

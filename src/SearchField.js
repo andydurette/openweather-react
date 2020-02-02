@@ -6,6 +6,7 @@ export default class SearchField extends React.Component {
     return (
       <section id="filterBar">
         <h2>Search for a City:</h2>
+        <form onSubmit={this.props.onSubmit}>
         <div id="search">
           <input 
             type="text" name="City Search"
@@ -13,8 +14,9 @@ export default class SearchField extends React.Component {
             value={this.props.value} 
             onChange={this.props.onChange}
           />
-          <button onClick={this.props.onClick}><img src="./images/search.png" alt="search"/></button>
+          <button><img src="./images/search.png" alt="search"/></button>
         </div>
+        </form>
         {/*}
          <div id="searchError">
            <p>{this.props.searchErrorValue}</p>
