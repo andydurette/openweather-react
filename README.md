@@ -1,6 +1,6 @@
 # React OpenWeather
 
-This is a react weather application built using openweather API data.</br>
+This is a react weather application built using openweather API data in an exercise to better hone my react skills.</br>
 Live Link: https://openweather-react.netlify.com
 
 ![markdown-image](public/images/markdown-image.png)
@@ -21,5 +21,3 @@ This will install the dependencies for the react app to run.
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
