@@ -2,14 +2,6 @@ import React from 'react';
 
 export default class SearchField extends React.Component {
 
-  shouldBlur = (e) => {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-    if (e.keyCode === 13) {
-      e.target.blur();
-      // or set the state as you wish
-    }
-  }
-  }
   
   
   render() {
@@ -23,7 +15,6 @@ export default class SearchField extends React.Component {
             placeholder="Search for a different different cities Weather..."
             value={this.props.value} 
             onChange={this.props.onChange}
-            onKeyDown={this.shouldBlur}
           />
           <button><img src="./images/search.png" alt="search"/></button>
         </div>

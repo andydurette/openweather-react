@@ -65,6 +65,14 @@ export default class App extends Component {
   // SearchUpdate function
   searchUpdate = (e) => { 
     e.preventDefault();
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+      if (e.keyCode === 13) {
+        e.target.blur();
+        // or set the state as you wish
+      }
+    }
+
     if (this.state.search === '') {
       this.setState({searchErrorValue: "*Requires a city name to be inputted.", errorLogged: true});
       setTimeout(() => {  this.setState({ errorLogged: false}) }, 3000);
