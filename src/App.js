@@ -29,13 +29,13 @@ export default class App extends Component {
   // Initial Data setup, 
   async componentDidMount() {
     // Call data with the string for the city
-    const locationresponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&appid=${this.state.apiKey}`);
-    const locationJson = await locationresponse.json();
-    this.setState({ cityId: locationJson.id });
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&appid=${this.state.apiKey}`);
+    const json = await response.json();
+    this.setState({ cityId: json.id });
     // Call with the cityId data to get it's weather
-    const locationWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityId}&APPID=${this.state.apiKey}&units=metric`);
-    const locationWeatherResponseJson = await locationWeatherResponse.json();
-    this.setState({ weather: locationWeatherResponseJson, isFetching: false });
+    const response2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityId}&APPID=${this.state.apiKey}&units=metric`);
+    const json2 = await response2.json();
+    this.setState({ weather: json2, isFetching: false });
   }
 
   // Update weather with API DATA
@@ -44,7 +44,7 @@ export default class App extends Component {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&appid=${this.state.apiKey}`);
     const json = await response.json();
     // If statement to make sure promise resolved with what was asked if not let user know it didn't
-    if(json.name && json.name.toLowerCase() === this.state.cityName.toLowerCase()){
+    if(json.name && json.name.toLowerCase().includes(this.state.cityName.toLowerCase())){
       this.setState({ cityId: json.id });
       // Call with the cityId data to get it's weather
       const response2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityId}&APPID=${this.state.apiKey}&units=metric`);
